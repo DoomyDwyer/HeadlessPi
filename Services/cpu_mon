@@ -1,0 +1,26 @@
+#!/bin/bash
+
+### BEGIN INIT INFO
+# Provides:      cpu_mon
+# Required-Start: 
+# Required-Stop:  
+# Default-Start:     1 2 3 4 5
+# Default-Stop:      0 6
+# Short-Description: Headless Pi CPU Monitor
+# Description:       Headless Pi CPU resource & monitor service
+### END INIT INFO
+
+case "$1" in
+    start )
+        cd /home/pi/python
+        echo "running cpu_mon.py in $(pwd)"
+        nohup python3 cpu_mon.py >> /var/log/cpu_mon.log 2>&1 &
+        ;;
+    stop )
+        pid=$(ps -ef | grep "cpu_mon.py" | grep -v grep | awk '{print $2}')
+        echo "killing cpu_mon.py process: pid=${pid}" 2>&1
+        kill -9 ${pid}
+
+esac
+
+exit 0
