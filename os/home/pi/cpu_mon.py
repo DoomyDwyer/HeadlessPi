@@ -171,7 +171,7 @@ def main():
 		if counter % 4 == 0:
 			monitorDisk()
 			counter = 0
-		sleep(0.5)
+		sleep(1)
 		counter += 1
 
 configFile = open('cpu_mon.config', 'r')
