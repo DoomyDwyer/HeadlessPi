@@ -11,7 +11,7 @@
 
 # Edit /lib/systemd/system/bluetooth.service to enable BT services
 sudo sed -i: 's|^Exec.*toothd$| \
-ExecStart=/usr/lib/bluetooth/bluetoothd -C \
+ExecStart=/usr/sbin/bluetoothd --compat --noplugin=sap -E \
 ExecStartPost=/usr/bin/sdptool add SP \
 ExecStartPost=/bin/hciconfig hci0 piscan \
 |g' /lib/systemd/system/bluetooth.service
