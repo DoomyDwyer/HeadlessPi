@@ -7,7 +7,7 @@ Covers setting up Bluetooth serial for logging onto the shell over Serial I/O, a
 - Instructions on how to set up Bluetooth serial on a new Raspian image prior to burning to SD. Instructions also cover how to easily set up a Pi to connect to your WiFi immediately after booting a freshly burned image, without using Bluetooth Serial.
 - An experimental GPIO Monitring Station Python script.
 
-### Must haves for Bluetoorh serial: ###
+### Must haves for Bluetooth serial: ###
 - rfcomm BT serial service
 
 ### GPIO Monitoring Station (Experimental): ###
